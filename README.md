@@ -12,24 +12,28 @@
 
 3 - Phonegap Plugins list implemented:
 
-  - Battery Status
-  - Camera
-  - Contacts
-  - Device Info
-  - Device Motion (accelerometer)
-  - Device Orientation (compass)
-  - Dialogs (notification)
-  - Geolocation
-  - Globalization
-  - InAppBrowser
-  - Media Capture
-  - Network Information
-  - Splash Screen
-  - Status Bar
-  - Vibration
+- cordova-plugin-battery-status
+- cordova-plugin-camera
+- cordova-plugin-contacts
+- cordova-plugin-device
+- cordova-plugin-device-motion
+- cordova-plugin-device-orientation
+- cordova-plugin-dialogs
+- cordova-plugin-geolocation
+- cordova-plugin-globalization
+- cordova-plugin-inappbrowser
+- cordova-plugin-media-capture
+- cordova-plugin-network-information
+- cordova-plugin-splashscreen
+- cordova-plugin-vibration
+- cordova-plugin-statusbar
+- OBS:
+  - cordova-plugin-console is a plug used in development.
+  - cordova-plugin-whitelist and cordova-plugin-legacy-whitelist is a plug used in development.
+  - cordova-plugin-media, cordova-plugin-file and cordova-plugin-file-transfer - They will be developed in a later version or another app.
 
-  - OBS:
-    - Console is a plug used in development.
-    - Whitelist is a plug used in development.
-    - Media, File and File Transfer - They will be developed in a later version or another app.
+  
+
+
+
 
