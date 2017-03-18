@@ -1,0 +1,75 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.anderson.gapapp"
+        }
+    },
+    "dependent_plugins": {}
+}

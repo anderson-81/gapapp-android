@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="js/jquery/jquery.mobile-1.4.5.min.css" />
+    <script src="js/jquery/jquery-1.8.0.js"></script>
+    <script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/fastclick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmts059nyM7y19sENF1liBh218hSD8H78"></script>
+    <title>GapApp</title>
+</head>
+
+<body>
+    <div data-role="page" id="home" data-theme="b">
+        <div data-role="header" data-position="fixed">
+            <div class="bar-header">
+                <a href="#menu"><img class="img-item-bar ui-btn-left" src="img/menu.png" /></a>
+                <a href="#about"><img class="img-item-bar ui-btn-right" src="img/about.png"/></a>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content center" id="home-main">
+            <div class="center">
+                <img class="imgHome" id="imgHome" src="img/logo.png" />
+                <span class="p3-phonegap bold">GapApp v1.0</span>
+            </div>
+        </div>
+
+
+        <div data-role="panel" id="menu" class="painel-menu" data-swipe-close="true" data-display="overlay">
+            <ul data-role="listview" class="left">
+                <div class="space-menu-menu">
+                    <span class="panel-menu-title1">GapApp v1.0</span>
+                    <br>
+                    <br>
+                    <span class="panel-menu-title2">Menu</span>
+                </div>
+                <div style="margin-top:10%;"></div>
+                <li><a href="#battery" class="ui-icon-power ui-btn-icon-left item-menu">battery</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#camera" class="ui-icon-camera ui-btn-icon-left item-menu">camera</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#contacts" class="ui-icon-edit ui-btn-icon-left item-menu">Contacts</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#deviceInfo" class="ui-icon-info ui-btn-icon-left item-menu">Device</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="" class="ui-icon-clock ui-btn-icon-left item-menu" onclick="app.StartAccelerometer()">accelerometer</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="" class="ui-icon-navigation ui-btn-icon-left item-menu" onclick="app.StartCompass()">compass</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#dialogs" class="ui-icon-comment ui-btn-icon-left item-menu">Dialogs</a>
+                </li>
+                <div class="space-item-menu"></div>
+
+                <!--
+                    <li><a href="#" class="ui-icon-alert ui-btn-icon-left item-menu" onclick="app.GetMessage(2);">File</a></li>
+                    <div class="space-item-menu"></div>
+                    <li><a href="#" class="ui-icon-alert ui-btn-icon-left item-menu" onclick="app.GetMessage(3);">File Transfer</a></li>
+                    <div class="space-item-menu"></div>
+					-->
+
+                <li><a href="#" class="ui-icon-location ui-btn-icon-left item-menu" onclick="app.GetCurrentLocation(0)">geolocation</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#globalization" class="ui-icon-home ui-btn-icon-left item-menu">globalization</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#inappbrowser" class="ui-icon-search ui-btn-icon-left item-menu">inappbrowser</a>
+                </li>
+                <!--
+                    <div class="space-item-menu"></div>
+                    <li><a href="#" class="ui-icon-alert ui-btn-icon-left item-menu" onclick="app.GetMessage(1);">Media</a></li>
+                    -->
+                <div class="space-item-menu"></div>
+                <li><a href="#capture" class="ui-icon-video ui-btn-icon-left item-menu">Media Capture</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#network" class="ui-icon-cloud ui-btn-icon-left item-menu">network</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#splashscreen" class="ui-icon-tag ui-btn-icon-left item-menu">splashscreen</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#vibration" class="ui-icon-action ui-btn-icon-left item-menu">vibration</a>
+                </li>
+                <div class="space-item-menu"></div>
+                <li><a href="#statusbar" class="ui-icon-minus ui-btn-icon-left item-menu">StatusBar</a>
+                </li>
+                <div class="space-item-menu"></div>
+            </ul>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="deviceInfo" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>DEVICE</h1>
+            <h5 class="center">Information Device</h5>
+            <p>Version of Cordova</p>
+            <input type="text" id="versioncordova" readonly>
+            <p>Model</p>
+            <input type="text" id="model" readonly>
+            <p>Platform</p>
+            <input type="text" id="platform" readonly>
+            <p>Universally Unique Identifier</p>
+            <input type="text" id="uuid" readonly>
+            <p>Operating System Version</p>
+            <input type="text" id="osv" readonly>
+            <p>Manufacture</p>
+            <input type="text" id="manufacture" readonly>
+            <p>Virtualized</p>
+            <input type="text" id="isvirtual" readonly>
+            <p>Serial Number</p>
+            <input type="text" id="serialnumber" readonly>
+        </div>
+    </div>
+
+    <div data-role="page" id="about" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>Information</h1>
+            <div id="divHome">
+                <p class="p1">GapApp</p>
+                <p class="p2">Android application using jQuery Mobile that seeks to show the basic form of the use of standards PhoneGap plugins.</p>
+                <br>
+                <div class="right">
+                    <img class="imgInfo1" src="img/logo.png" />
+                    <img class="imgInfo2" src="img/Android_Robot_200.png" />
+                    <img class="imgInfo3" src="img/jmob.png" />
+                </div>
+                <p class="p3-phonegap">
+                    PhoneGap is an open source solution for building cross-platform mobile apps with standards-based Web technologies like HTML, JavaScript, CSS.
+                </p>
+                <p class="p3-android">
+                    Android is a mobile operating system developed by Google, based on the Linux kernel and designed primarily for touchscreen mobile devices such as smartphones and tablets.
+                </p>
+                <p class="p3-jquery">
+                    jQuery Mobile is a HTML5-based user interface system designed to make responsive web sites and apps that are accessible on all smartphone, tablet and desktop devices.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="capture" data-theme="b">
+        <div data-role="header">
+            <a href="#cfgCapture" class="ui-btn ui-icon-gear ui-btn-icon-left" style="margin-top:5%;margin-left:85%;text-align:right;background-color:#252525;border:0px;"></a>
+        </div>
+        <div data-role="main" class="ui-content center">
+            <h1>MEDIA CAPTURE</h1>
+            <h5 class="center">Capture video and images</h5>
+            <div class="center">
+                <br>
+                <button onclick="app.CaptureImage()" data-theme="a">IMAGE</button>
+                <button onclick="app.CaptureVideo()" data-theme="a">VIDEO</button>
+                <!-- <button onclick="app.CaptureAudio()" data-theme="a">AUDIO</button> -->
+                <div id="divDetailCapture">
+                    <h4>DETAILS</h4>
+                    <h5>File Name</h5>
+                    <p id="filename" class="detail-capture"></p>
+                    <h5>FullPath</h5>
+                    <p id="fullpath" class="detail-capture center-div"></p>
+                    <h5>Type</h5>
+                    <p id="type" class="detail-capture"></p>
+                    <h5>Last Modified Date</h5>
+                    <p id="lastdate" class="detail-capture"></p>
+                    <h5>Size</h5>
+                    <p id="size" class="detail-capture"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" id="cfgCapture" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>MEDIA CAPTURE</h1>
+            <h5 class="center">Configuration</h5>
+            <div class="left">
+                <h5 class="center">AUDIO</h5>
+                <label name="limitAudio">Limit</label>
+                <input type="number" data-theme="a" id="limitAudio" data-clear-btn="true">
+                <label name="durationAudio">Duration</label>
+                <input type="number" data-theme="a" id="durationAudio" data-clear-btn="true">
+                <h5 class="center">IMAGE</h5>
+                <label name="limitImage">Number of Images (Sigle Capture):</label>
+                <input type="number" data-theme="a" id="limitImage" data-clear-btn="true">
+                <h5 class="center">VIDEO</h5>
+                <label name="limitVideo">Limit</label>
+                <input type="number" data-theme="a" id="limitVideo" data-clear-btn="true">
+                <label name="durationVideo">Duration</label>
+                <input type="number" data-theme="a" id="durationVideo" data-clear-btn="true">
+            </div>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="inappbrowser" data-theme="b">
+        <div data-role="header">
+            <a href="#cfginappbrowser" class="ui-btn ui-icon-gear ui-btn-icon-left" style="margin-top:5%;margin-left:85%;text-align:right;background-color:#252525;border:0px;"></a>
+        </div>
+        <div data-role="main" class="ui-content center">
+            <h1>inappbrowser</h1>
+            <h5>web browser</h5>
+            <div class="margin-100"></div>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.OpenIntroPage()">OPEN</a>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="cfginappbrowser" data-theme="b">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-icon-gear ui-btn-icon-left" style="margin-top:5%;margin-left:85%;text-align:right;background-color:#252525;border:0px;"></a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h1>INAPPBROWSER</h1>
+            <div class="center">
+                <h5>Configuration</h5>
+            </div>
+            <br>
+            <p>Location bar on or off:</p>
+            <select id="location" data-role="slider">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <p>Create the browser and load the page:</p>
+            <select id="hidden" data-role="slider" disabled="disabled">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <p>Cookie cache cleared before the new window is opened:</p>
+            <select id="clearcache" data-role="slider">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <p>Session cookie cache cleared before the new window is opened:</p>
+            <select id="clearsessioncache" data-role="slider">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <p>Show Android browser's zoom controls:</p>
+            <select id="zoom" data-role="slider">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <p>Use the hardware back button to navigate backwards through the InAppBrowser's history:</p>
+            <select id="hardwareback" data-role="slider">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <p>To prevent HTML5 audio or video from autoplaying:</p>
+            <select id="mediaPlaybackRequiresUserAction" data-role="slider">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <p>The target in which to load the URL:</p>
+            <select id="target" data-theme="a">
+                <option value="_self">SELF</option>
+                <option value="_blank">BLANK</option>
+                <option value="_system">SYSTEM</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="geolocation" data-theme="b">
+        <div data-role="header">
+            <a href="#cfggeo" class="ui-btn ui-icon-gear ui-btn-icon-left" style="margin-top:5%;margin-left:85%;text-align:right;background-color:#252525;border:0px;"></a>
+        </div>
+        <div data-role="main" class="ui-content center">
+            <h1>GEOLOCATION</h1>
+            <h5>Current location</h5>
+            <div class="center-div">
+                <div id="map" class="img-cam"></div>
+            </div>
+            <a href="#geolocationDet" class="ui-btn ui-btn-a">DETAILS</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="cfggeo" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>GEOLOCATION</h1>
+            <h5>Configuration</h5>
+            <!--
+            <p>Key</p>
+            <input type="text" data-theme="a" id="keymap" readonly style="text-align:center;">
+            <div class="margin-100"></div>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.ClearKeyMap()">CLEAR</a>
+            -->
+            <div class="left">
+                <label name="maximumAge">Milliseconds:</label>
+                <input type="number" data-theme="a" id="maximumAge" data-clear-btn="true">
+
+                <label name="timeout">Timeout:</label>
+                <input type="number" data-theme="a" id="timeout" data-clear-btn="true">
+
+                <p>Enable High Accuracy:</p>
+                <select id="enableHighAccuracy" data-role="slider">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" id="geolocationDet" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>GEOLOCATION</h1>
+            <h5>Details Location</h5>
+            <p>Latitude</p>
+            <input type="text" id="latitudeGeo" readonly>
+            <p>Longitude</p>
+            <input type="text" id="longitudeGeo" readonly>
+            <p>Altitude</p>
+            <input type="text" id="altitudeGeo" readonly>
+            <p>Accuracy</p>
+            <input type="text" id="accuracyGeo" readonly>
+            <p>Altitude Accuracy</p>
+            <input type="text" id="altitudeaccuracyGeo" readonly>
+            <p>Heading</p>
+            <input type="text" id="headingGeo" readonly>
+            <p>Speed</p>
+            <input type="text" id="speedGeo" readonly>
+            <p>Timestamp</p>
+            <input type="text" id="timestampGeo" readonly>
+        </div>
+    </div>
+
+
+
+    <div data-role="page" id="globalization" data-theme="b">
+        <div data-role="main" class="ui-content">
+            <h1>GLOBALIZATION</h1>
+            <h5 class="center">Access locale data</h5>
+            <div class="margin-20"></div>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(1)">Preferred Language</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(2)">Locale Name</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(3)">Date To String</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(4)">Currency Pattern</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(5)">Date Names</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(6)">Date Pattern</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(7)">First Day Of Week</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(8)">Number Pattern</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(9)">Is Day Light Savings Time</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(10)">Number To String</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(11)">String To Date</a>
+            <a href="#" class="ui-btn ui-btn-a" onclick="app.GetGlobalization(12)">String To Number</a>
+        </div>
+    </div>
+
+
+
+    <div data-role="page" id="contacts" data-theme="b">
+        <div data-role="main" class="ui-content">
+            <h1>CONTACTS</h1>
+            <h5 class="center">Contacts Management</h5>
+            <div class="margin-30"></div>
+            <label name="fname">Add Contacts:</label>
+            <a href="#addContacts" class="ui-btn ui-btn-a">ADD</a>
+            <label name="fname">Search Contacts For Name:</label>
+            <a href="#" id="btnSearchContact" class="ui-btn ui-btn-a" onclick="app.SearchContact()">SEARCH</a>
+            <label name="fname">Fetch Contacts:</label>
+            <a href="#" id="btnFetch" class="ui-btn ui-btn-a" onclick="app.FetchContact()">FETCH</a>
+            <label name="fname">Select Contact:</label>
+            <a href="#" id="btnPick" class="ui-btn ui-btn-a" onclick="app.PickContact()">PICK</a>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="addContacts" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>CONTACTS</h1>
+            <h5>Register contacts </h5>
+            <div class="left">
+                <input type="hidden" id="code">
+                <label name="fname">First Name:</label>
+                <input type="text" data-theme="a" id="fname" data-clear-btn="true">
+                <label name="lname">Last Name:</label>
+                <input type="text" data-theme="a" id="lname" data-clear-btn="true">
+                <label name="phoneNumber">Phone Number:</label>
+                <input type="number" data-theme="a" id="phoneNumber" data-clear-btn="true">
+                <label name="email">Email:</label>
+                <input type="email" data-theme="a" id="email" data-clear-btn="true">
+            </div>
+            <br>
+            <a href="#" class="ui-btn ui-btn-a" id="btnAdd" onclick="app.SaveContact()">SAVE</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="searchContacts" data-theme="b">
+        <section data-role="content center">
+            <h1>CONTACTS</h1>
+            <h5 class="center" id="titleSearch">Search Contacts</h5>
+            <table data-role="table" data-mode="columntoggle" class="ui-responsive" data-column-btn-text="Columns" id="tbContacts">
+                <thead>
+                    <th class="hide">ID</th>
+                    <th>Name</th>
+                    <th data-priority="1">Phone</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <div data-role="page" id="pickContact" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>CONTACTS</h1>
+            <h5 class="center" id="titleSearch">Pick Contact</h5>
+            <div id="divDisplayName" class="left">
+                <p>Display Name:</p>
+                <input type="text" id="displayNamePick" readonly>
+            </div>
+            <div id="divPhoneNumber" class="left">
+                <p>Phone Number</p>
+                <input type="text" id="phoneNumberPick" readonly>
+            </div>
+            <!--
+            <div id="divEmail" class="left">
+                <p>Email</p>
+                <input type="text" id="emailPick" readonly>
+            </div>
+            -->
+        </div>
+    </div>
+
+
+    <div data-role="page" id="splashscreen" data-theme="b">
+        <div data-role="main" class="ui-content">
+            <h1>SPLASHSCREEN</h1>
+            <h5 class="center">Splashcreen of application</h5>
+            <div class="margin-100"></div>
+            <button class="ui-btn ui-btn-a" id="btnSplash" onclick="app.ShowSplash()">SHOW</button>
+            <br>
+        </div>
+    </div>
+
+    <div data-role="page" id="statusbar" data-theme="b">
+        <div data-role="main" class="ui-content">
+            <h1>STATUSBAR</h1>
+            <h5 class="center">Control the device statusbar</h5>
+            <br>
+            <p class="p-description">Set the background color of the statusbar by color name:</p>
+            <select id="cmbColorName" data-theme="a">
+                <option value="black">Black</option>
+                <option value="darkGray">Dark Gray</option>
+                <option value="lightGray">Light Gray</option>
+                <option value="white">White</option>
+                <option value="gray">Gray</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="cyan">Cyan</option>
+                <option value="yellow">Yellow</option>
+                <option value="magenta">Magenta</option>
+                <option value="orange">Orange</option>
+                <option value="purple">Purple</option>
+                <option value="brown">Brown</option>
+            </select>
+            <a href="#" class="ui-btn ui-btn-a" id="btnColorName" onclick="app.SetColorName()">SET</a>
+            <br>
+            <p class="p-description">Sets the background color of the statusbar by a hex string:</p>
+            <input type="text" data-theme="a" id="colorHex" style="text-align:center;">
+            <a href="#" class="ui-btn ui-btn-a" id="btnColorHex" onclick="app.SetColorHex()">SET</a>
+            <br>
+            <p class="p-description">Hide or Show StatusBar:</p>
+            <a href="#" class="ui-btn ui-btn-a" id="btnShowHide" onclick="app.ShowHideStatusBar()">HIDE</a>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="camera" data-theme="b">
+        <div data-role="header">
+            <a href="#cfgcamera" class="ui-btn ui-icon-gear ui-btn-icon-left" style="margin-top:5%;margin-left:85%;text-align:right;background-color:#252525;border:0px;"></a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h1>CAMERA</h1>
+            <h5 class="center">Device Camera</h5>
+            <br>
+            <div class="center-div">
+                <img id="image" src="" class="img-cam">
+                <video class="img-cam" id="videoCam" controls autoplay>
+                    <source src="" type="">
+                </video>
+            </div>
+            <a href="#" class="ui-btn ui-btn-a" id="btnCapture" onclick="app.Capture()">CAPTURE</a>
+            <a href="#" class="ui-btn ui-btn-a" id="btnSelect" onclick="app.Select()">SELECT</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="cfgcamera" data-theme="b">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-icon-gear ui-btn-icon-left" style="margin-top:5%;margin-left:85%;text-align:right;background-color:#252525;border:0px;"></a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h1>CAMERA</h1>
+            <h5 class="center">Configuration</h5>
+            <br>
+            <div data-role="collapsible" data-theme="a">
+                <h1>CAPTURE</h1>
+                <p>Image Quality:</p>
+                <input type="range" name="quality" id="quality" min="0" max="100" data-theme="a" data-track-theme="b" />
+                <p>Format of return value:</p>
+                <select data-theme="a" id="destinationType" disabled="disabled">
+                    <option value="1" selected>FILE_URI</option>
+                    <option value="0">base64</option>
+                </select>
+                <p>Encoding type:</p>
+                <select data-theme="a" id="encodingType">
+                    <option value="0" selected>JPEG</option>
+                    <option value="1">PNG</option>
+                </select>
+                <p>Allow edition after capture:</p>
+                <select id="allowEdit" data-role="slider">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+                <p>Correct Orientation:</p>
+                <select id="correctOrientation" data-role="slider">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+                <p>Saved to Photo Album:</p>
+                <select id="saveToPhotoAlbum" data-role="slider">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+                <p>Camera's Direction:</p>
+                <select id="cameraDirection" data-theme="a">
+                    <option value="0" selected>BACK</option>
+                    <option value="1">FRONT</option>
+                </select>
+            </div>
+            <div data-role="collapsible" data-theme="a">
+                <h1>SELECT</h1>
+                <p>Media Type:</p>
+                <select id="mediaType" data-theme="a">
+                    <option value="0" selected>Picture</option>
+                    <option value="1">Video</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div data-role="page" id="vibration" data-theme="b">
+        <div data-role="main" class="ui-content">
+            <h1>VIBRATION</h1>
+            <div class="center">
+                <h5>Device vibration</h5>
+                <div class="margin-100"></div>
+                <button class="ui-btn ui-btn-a" id="btnStartVibration" onclick="app.StartVibration()">START</button>
+                <br>
+                <button class="ui-btn ui-btn-a" id="btnStopVibration" onclick="app.StopVibration()">STOP</button>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" id="battery" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>BATTERY</h1>
+            <h5>Battery information</h5>
+            <br>
+            <h3>LEVEL</h3>
+            <div class="battery-info" id="level"></div>
+            <h3>STATUS</h3>
+            <div class="battery-info" id="status"></div>
+            <h3>PLUGGED</h3>
+            <div class="battery-info" id="plugged"></div>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="accelerometer" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>DEVICE MOTION</h1>
+            <h5>Accelerometer</h5>
+            <p>Acceleration X</p>
+            <input type="text" id="accx" readonly>
+            <p>Acceleration Y</p>
+            <input type="text" id="accy" readonly>
+            <p>Acceleration Z</p>
+            <input type="text" id="accz" readonly>
+            <p>Timestamp</p>
+            <input type="text" id="acct" readonly>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="compass" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>DEVICE ORIENTATION</h1>
+            <h5>Compass</h5>
+            <p>Magnetic Heading</p>
+            <input type="text" id="magneticHeading" readonly>
+            <p>True Heading</p>
+            <input type="text" id="trueHeading" readonly>
+            <p>Heading Accuracy</p>
+            <input type="text" id="headingAccuracy" readonly>
+            <p>Timestamp</p>
+            <input type="text" id="timestamp" readonly>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="network" data-theme="b">
+        <div data-role="main" class="ui-content center">
+            <h1>NETWORK</h1>
+            <h5>Current Connection</h5>
+            <div class="margin-100"></div>
+            <a href="#" class="ui-btn-a ui-btn" onclick="app.GetCurrentConnection()">GET</a>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="dialogs" data-theme="b">
+        <div data-role="main" class="ui-content">
+            <h1>DIALOGS</h1>
+            <h5 class="center">Native Dialog UI elements</h5>
+            <div class="margin-50">
+                <a href="#" class="ui-btn ui-btn-a" onclick="app.Alert()">ALERT</a>
+                <br>
+                <a href="#" class="ui-btn ui-btn-a" onclick="app.Confirm()">CONFIRM</a>
+                <br>
+                <a href="#" class="ui-btn ui-btn-a" onclick="app.Prompt()">PROMPT</a>
+                <br>
+                <a href="#" class="ui-btn ui-btn-a" onclick="app.Beep()">BEEP</a>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+
+</body>
+
+</html>

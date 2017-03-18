@@ -1,0 +1,213 @@
+
+
+
+       .battery-info {
+           font-size: 56px;
+           color: #4CD0F7;
+       }
+       .low {
+           color: orange;
+       }
+       .critical {
+           color: red;
+       }
+       .plugged {
+           color: green;
+       }
+       .unplugged {
+           color: #8B0000;
+       }
+       .good {
+           color: #4CD0F7;
+       }
+       .center {
+           text-align: center;
+       }
+       .img-cam {
+           border: 1px solid white;
+           width: 285px;
+           height: 400px;
+           display: none;
+       }
+       .p-description {
+           font-size: 12px;
+           text-decoration: none;
+       }
+       .margin-100 {
+           margin-top: 90%;
+       }
+       .margin-50 {
+           margin-top: 50%;
+       }
+       .margin-20 {
+           margin-top: 20%;
+       }
+       .text-none {
+           text-decoration: none;
+       }
+       input[type='number'] {
+           -moz-appearance: textfield;
+       }
+       input::-webkit-outer-spin-button,
+       input::-webkit-inner-spin-button {
+           -webkit-appearance: none;
+       }
+       .detail-capture {
+           font-family: 12px;
+           font-weight: bold;
+           text-transform: none;
+           color: #4CD0F7;
+       }
+       .item-menu {
+           color: #4CD0F7;
+           text-decoration: none;
+           text-transform: capitalize;
+           width: 100%;
+           display: block;
+       }
+       .panel-menu {
+           text-align: left;
+           margin-bottom: 5%;
+           font-weight: bold;
+       }
+       .left {
+           text-align: left;
+       }
+       .space-item-menu {
+           margin-top: 10%;
+       }
+       .space-menu-menu {
+           background-color: #27A1C5;
+           color: #FFFFFF;
+           text-align: left;
+           text-decoration: none;
+           text-transform: capitalize;
+           padding-top:10%;
+       }
+       .home-color-header {
+           background-color: #4CD0F7;
+       }
+       .bar-header {
+           background-color: #27A1C5;
+           padding-top:30%;
+       }
+      .imgInfo1 {
+           width: 60%;
+       }
+       .imgInfo2 {
+           width: 30%;
+       }
+       .imgInfo3 {
+           width: 70%;
+       }
+       .p1 {
+           font-size: 200%;
+           text-align: left;
+           font-weight: bold;
+           text-transform: none;
+           text-decoration: none;
+       }
+       .p2 {
+           font-size: 13px;
+           text-align: left;
+           text-transform: none;
+           text-decoration: none;
+       }
+       .p3-phonegap {
+           font-size: 15px;
+           text-align: right;
+           color: #4CD0F7;
+           text-transform: none;
+           text-decoration: none;
+       }
+       .p3-android {
+           font-size: 15px;
+           text-align: right;
+           color: #A4C439;
+           text-transform: none;
+           text-decoration: none;
+       }
+       .p3-jquery {
+           font-size: 15px;
+           text-align: right;
+           color: #108040;
+           text-transform: none;
+           text-decoration: none;
+       }
+       .imgHome {
+       	   padding-top: 15%;
+       	   padding-bottom: 10%;
+           width: 100%;
+       }
+       .bold {
+           font-weight: bold;
+       }
+       #menu > div > ul > li > a {
+           color: #4CD0F7;
+           font-size: 15px;
+       }
+       #menu > div > ul > li > a:link {
+           color: #4CD0F7;
+       }
+       #menu > div > ul > li > a:visited {
+           color: #4CD0F7;
+       }
+       #menu > div > ul > li > a:hover {
+           color: #4CD0F7;
+       }
+       .panel-menu-title1 {
+           font-size: 15px;
+           margin-bottom: 100%;
+           margin-left: 4%;
+       }
+       .panel-menu-title2 {
+           font-size: 30px;
+           margin-left: 4%;
+           font-weight: bold;
+           padding-top:100%; 
+       }
+       .btn-config {
+           margin-top: 5%;
+           margin-left: 85%;
+           text-align: right;
+           background-color: #252525;
+           border: 0px;
+       }
+
+       .center-div {
+           display: -webkit-box;
+           -webkit-box-pack: center;
+           -webkit-box-align: center;
+       }
+       .right {
+           text-align: right;
+       }
+
+       .img-item-bar{
+          padding-top:5%; 
+          height:60%;
+       }
+
+       .img-delete-contact{
+          width:20px;
+       }
+
+       .hide{
+        display: none;
+       }
+
+       .margin-30{
+          margin-top: 30%;
+       }
+
+    
+
+
+     
+
+      
+
+      
+       
+
+
