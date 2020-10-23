@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+# GapApp
 
-You can use the [editor on GitHub](https://github.com/anderson-81/gapapp-android/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+1 - Description:
+  - Android application using jQuery Mobile that seeks to show the basic form of the use of standards PhoneGap/Cordova plugins.
+  
+2 - Development Tools:
+  
+  - Sublime Text
+  - PhoneGap Desktop
+  - Ripple emulator
+  - Android Studio (Build)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+3 - Phonegap Plugins list implemented:
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anderson-81/gapapp-android/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- cordova-plugin-battery-status
+- cordova-plugin-camera
+- cordova-plugin-contacts
+- cordova-plugin-device
+- cordova-plugin-device-motion
+- cordova-plugin-device-orientation
+- cordova-plugin-dialogs
+- cordova-plugin-geolocation
+- cordova-plugin-globalization
+- cordova-plugin-inappbrowser
+- cordova-plugin-media-capture
+- cordova-plugin-network-information
+- cordova-plugin-splashscreen
+- cordova-plugin-vibration
+- cordova-plugin-statusbar
+- OBS:
+  - cordova-plugin-console is a plug used in development.
+  - cordova-plugin-whitelist and cordova-plugin-legacy-whitelist is a plug used in development.
+  - cordova-plugin-media, cordova-plugin-file and cordova-plugin-file-transfer - They will be developed in a later version or another app.
